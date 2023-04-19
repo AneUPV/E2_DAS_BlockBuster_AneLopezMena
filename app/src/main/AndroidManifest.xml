@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:installLocation="preferExternal">
+    <!-- Indicar permisos que pedirá la aplicación en el manifest.xml -->
+    <!-- Indicar permisos que pedirá la aplicación para las notificaciones -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Indicar permisos que pedirá la aplicación para el trailer -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- indicar en el manifiesto que se requiere tener cámara fotográfica -->
+    <uses-feature
+        android:name="android.hardware.camera2.full"
+        android:required="true" />
+    <!-- Gestionar el hardware (para sacar fotos desde nuestra aplicación) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Permisos para leer de la galería -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Guardar en la galería (incluye el permiso de lectura) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Permisos para GEOLOCALIZACIÓN: Precisión nivel “bloque de edificios en una ciudad” -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Permisos para GEOLOCALIZACIÓN: Tan preciso como sea posible -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Permisos para el WIDGET: Mantiene el teléfono activo-->
+    <uses-permission android:name ="android.permission.WAKE_LOCK"/>
+
+    <application
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/TemaAplicacion"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".activities.Act_Mapa"
+            android:exported="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <!-- ICONO DE NOTIFICACION FCM:
+            FUENTE: https://firebase.google.com/docs/cloud-messaging/android/receive?hl=es-419#java
+            Set custom default icon. This is used when no icon is set for incoming notification messages.
+            See README(https://goo.gl/l4GJaQ) for more.-->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/claqueta" />
+
+        <!--Color para notificaciones de FCM - FUENTE: https://goo.gl/6BKBk7 -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+
+        <!-- Añadir el ReminderBroadcast para la alarma de compra de entradas-->
+        <receiver android:name=".controlador.ReminderBroadcast" />
+
+        <activity
+            android:name=".activities.Act_Preferencias"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Act_MenuPrincipal"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/TemaAplicacion.NoActionBar" />
+        <activity
+            android:name=".activities.Act_InfoPelicula"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="PELICULANUEVA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.Act_AñadirPelicula"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Act_ModificarPelicula"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Act_Login"
+            android:exported="true"
+            android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".activities.Act_Registro"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- FUENTE: Documentación oficial de FIREBASE:
+        https://firebase.google.com/docs/cloud-messaging/android/client?hl=es-419 -->
+        <service
+            android:name=".java.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <!-- WIDGET -->
+        <receiver android:name=".widget.WidgetBlockbuster"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info"/>
+        </receiver>
+
+        <receiver android:name=".widget.WidgetService"
+            android:enabled="true"/>
+     </application>
+
+ </manifest>

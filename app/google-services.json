@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1090597966325",
+    "project_id": "ei2anelopezmena",
+    "storage_bucket": "ei2anelopezmena.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090597966325:android:9f257d7b57851fb0aad0bc",
+        "android_client_info": {
+          "package_name": "com.example.entregaindividual_2_anelopezmena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090597966325-b29i1rii6fmo0lku1o7bkn4c4e3e4s12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1p4Ta_K3745xhu0928PFmyLlpVWdiYPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090597966325-b29i1rii6fmo0lku1o7bkn4c4e3e4s12.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

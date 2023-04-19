@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_fondoWidget"
+        android:layout_width="match_parent"
+        android:layout_height="439dp"
+        android:layout_centerInParent="true"
+        android:scaleX="0.8"
+        android:src="@drawable/reloj_blockbuster_claqueta2" />
+
+    <TextView
+        android:id="@+id/tv_reloj"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_fondoWidget"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="55dp"
+        android:fontFamily="@font/montserrat"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/w_widgetText_blockbuster"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_fondoWidget"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/montserrat"
+        android:text="    BlockBuster!"
+        android:textAlignment="center"
+        android:textColor="@color/azul_claro"
+        android:textSize="22dp"
+        android:textStyle="bold|italic" />
+
+</RelativeLayout>

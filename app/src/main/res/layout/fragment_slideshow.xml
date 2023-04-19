@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.ui.sin_ver.Frag_SinVer">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_perfil"
+        style="@style/titulos"
+        android:background="@color/black"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="196dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:scaleX="0.85"
+                android:scaleY="0.85"
+                android:backgroundTint="@color/azul_cian"
+                android:elevation="20dp"
+                android:layout_weight="0.65">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@mipmap/ic_launcher" />
+
+                    <ImageView
+                        android:id="@+id/camara_small"
+                        android:layout_width="46dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/cambiar_foto"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingRight="25dp"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombredeusuario"
+                    style="@style/cabeceras"/>
+
+                <TextView
+                    android:id="@+id/perfil_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul_cian"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Ane Lopez Mena"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_perfil_email"
+                    style="@style/cabeceras"/>
+
+                <TextView
+                    android:id="@+id/perfil_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul_cian"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="ane@gmail.com"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/exportar"
+                style="@style/boton_gris"
+                android:layout_marginHorizontal="15dp"
+                android:paddingEnd="30dp"
+
+                android:drawablePadding="-50dp"
+                android:background="@drawable/search_view_bg"
+                android:backgroundTint="@color/colorPrimary"
+                android:drawableEnd="@drawable/exportar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/exportar" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:cardCornerRadius="700dp">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/titulos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/azul_oscuro2"
+                android:gravity="center"
+                android:text="@string/pelisQueNoHasVisto"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sinVer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:background="@drawable/search_view_bg">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

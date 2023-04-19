@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/gris_claro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/granate">
+
+                <TextView
+                    android:id="@+id/dial_1_boton_titulo"
+                    style="@style/boton_rojo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:text="Título dialogo 2"
+                    android:textColor="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/dial_1_boton_mensaje"
+                style="@style/subtitulos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Texto mensaje dialogo 1"
+                android:textColor="@color/granate"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
+                android:text="."/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/seleccion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/azul_oscuro2"
+                        android:foregroundGravity="center"
+                        android:gravity="center|center_horizontal"
+                        android:textColor="@color/white"
+                        android:textSize="28dp"
+                        android:textStyle="bold|italic"
+                        android:text="@string/eligeAsiento" />
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="371dp"
+                        android:paddingTop="-20dp"
+                        app:srcCompat="@drawable/plano_asientos" />
+<!-- ************************************************************ -->
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/titulos"
+                        android:text="@string/num_entradas" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"></Space>
+
+                    <TextView
+                        android:id="@+id/fechaHora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/subtitulos"
+                        android:text="TextView" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/resta"
+                            style="@style/boton_rojo"
+                            android:layout_width="0dp"
+                            android:textSize="50dp"
+                            android:textStyle="bold"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.15"
+                            android:text="-" />
+
+                        <TextView
+                            android:id="@+id/ce_numEntradas"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="1"
+                            android:paddingTop="20dp"
+                            android:textAlignment="center"
+                            android:textSize="30dp"
+                            style="@style/cabeceras"
+                            android:ems="10" />
+                        <Button
+                            android:id="@+id/suma"
+                            style="@style/boton_rojo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="50dp"
+                            android:textStyle="bold"
+                            android:layout_weight="0.15"
+                            android:text="+" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/alerta"
+                        style="@style/subtitulos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/granate" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"></Space>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/texto_fila"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/fila"
+                            android:textSize="18dp"
+                            style="@style/titulos"/>
+                        <Spinner
+                            android:id="@+id/ce_fila"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5" />
+
+                    </LinearLayout>
+
+<!-- ************************************************************ -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/texto_asiento"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/asiento"
+                            android:textSize="18dp"
+                            style="@style/titulos"/>
+
+                        <Spinner
+                            android:id="@+id/ce_asiento"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView155"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/colorPrimary"
+                        android:text="."/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp">
+
+                        <Button
+                            android:id="@+id/cancelar"
+                            style="@style/boton_azul"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:background="@color/azul_oscuro2"
+                            android:text="@string/b_cancelar"
+                            android:textColor="@color/azul_cian"
+                            android:textSize="19dp" />
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/aceptar"
+                            style="@style/boton_azul"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.755"
+                            android:background="@color/rojoNeon"
+                            android:text="@string/b_aceptar"
+                            android:textColor="@color/black"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+                    <!-- ************************************************************ -->
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
